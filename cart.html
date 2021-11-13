@@ -235,7 +235,7 @@
           <li>
             <i class="fa fa-search">Search</i>
           </li>
-          <li>
+          <li id="sign">
             <a href="./signin.html">Sign in</a>
           </li>
           <li>
@@ -345,6 +345,18 @@
 </html>
 
 <script>
+
+
+let loggedin = localStorage.getItem("isLoggedIn");
+let loggedinuser = JSON.parse(localStorage.getItem("user"));
+
+let signedin = document.getElementById("sign");
+
+if (loggedin && loggedinuser.name.length > 0) {
+  signedin.textContent = loggedinuser.name;
+}
+
+
   let productId = JSON.parse(localStorage.getItem("sibleProduct"));
   let displayDiv = document.getElementById("items");
   let right_bar = document.querySelector(".right_side_bar");

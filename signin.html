@@ -222,8 +222,8 @@
                 
 
               </li>
-              <li>
-                <a href="./signin.html">Sign in</a>
+              <li id="sign">
+                <a id="sign" href="./signin.html">Sign in</a>
               </li>
               <li>
                   <i class="fas fa-shopping-bag"></i>
@@ -341,8 +341,20 @@
 </html>
 
 <script>
+  let isLoggedIn = false; 
+  console.log(isLoggedIn)
+
+  let sign =  document.getElementById('sign')
+  let loggedin = localStorage.getItem("isLoggedIn");
+  let loggedinuser= JSON.parse(localStorage.getItem("users"));
+
   function signin(e) {
     e.preventDefault();
+
+    console.log(sign)
+    
+
+
 
     let myform = document.getElementById("myform");
 
@@ -351,9 +363,45 @@
 
     let all_users = JSON.parse(localStorage.getItem("users"));
 
+    if(email.length <=0 && password.length <=0){
+      alert("Please enter email and password")
+    }
+    else if(email.length <=0){
+      alert("Please enter email")
+    }
+    else if(password.length <=0){
+      alert("Please enter password")
+    }
+    else{
+      for(let i=0; i<all_users.length; i++){
+        if(all_users[i].email == email && all_users[i].password == password){
+          isLoggedIn = true;
+          localStorage.setItem("isLoggedIn", isLoggedIn);
+          localStorage.setItem("loggedinuser", JSON.stringify(all_users[i]));
+          alert("Login Successful")
+          window.location.href = "./index.html";
+        }
+      }
+      if(!isLoggedIn){
+        alert("Invalid email or password")
+      }
+    }
+
     all_users.forEach((user) => {
-      if (email === user.email && password === user.password) {
-        alert("You are Sign In| Enjoy Shopping")
+      if (email === user.email && password === user.password ) {
+
+        localStorage.setItem("user", JSON.stringify(user));
+        //  localStorage.setItem("isLoggedIn", true);
+
+        sign.innerText= loggedinuser.name;
+
+
+        isLoggedIn = true;
+       
+
+        localStorage.setItem("isLoggedIn", isLoggedIn);
+
+        // alert("You are Sign In| Enjoy Shopping")
         window.location.href = "index.html";
       }
     });

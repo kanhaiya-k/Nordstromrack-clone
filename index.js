@@ -1,3 +1,16 @@
+let loggedin = localStorage.getItem("isLoggedIn");
+let loggedinuser = JSON.parse(localStorage.getItem("user"));
+
+let signedin = document.getElementById("sign");
+
+console.log(signedin);
+console.log(loggedinuser);
+console.log(loggedin);
+
+if (loggedin && loggedinuser.name.length > 0) {
+  signedin.textContent = loggedinuser.name;
+}
+
 function showPopup() {
   const popup = document.getElementById("popup_container");
   popup.style.display = "block";

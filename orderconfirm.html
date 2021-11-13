@@ -193,7 +193,7 @@
                 
 
               </li>
-              <li>
+              <li id="sign">
                 <a href="./signin.html">Sign in</a>
               </li>
               <li>
@@ -292,4 +292,15 @@
      
   </body>
 </html>
+<script>
+  let loggedin = localStorage.getItem("isLoggedIn");
+let loggedinuser = JSON.parse(localStorage.getItem("user"));
+
+let signedin = document.getElementById("sign");
+
+if (loggedin && loggedinuser.name.length > 0) {
+  signedin.textContent = loggedinuser.name;
+}
+
+</script>
 
