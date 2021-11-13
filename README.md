@@ -22,6 +22,8 @@
 - Html 
 - CSS
 
+Website hosted url :- https://nordstromrack-clone.netlify.app/
+
 ## Landing Page 
 
 
@@ -39,4 +41,6 @@
 ## Order Confirmation page
 
 ![](https://imgdb.in/jdPp.jpg)
+
+
 
