@@ -9,12 +9,12 @@
 
 ## Features
 
--  SignUp  and SignIn validation.
-- localstorage data
+- SignUp and SignIn validation.
+- local storage data
 - Sorting based on price and Color
-- Crousel
-- Add to cart 
-
+- Carousel
+- Add to cart
+- User Name At as user
 
 ## TeachStack used 
 
