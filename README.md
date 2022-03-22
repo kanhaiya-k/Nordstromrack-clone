@@ -23,24 +23,3 @@
 - CSS
 
 Website hosted url :- https://nordstromrack-clone.netlify.app/
-
-## Landing Page 
-
-
-![](https://imgdb.in/jdPh.jpg)
-
-## SignIn And SingUp Page Respective
-
-![](https://imgdb.in/jdPt.jpg)
-![](https://imgdb.in/jdPy.jpg)
-
-## product page
-
-![](https://imgdb.in/jdPq.jpg)
-
-## Order Confirmation page
-
-![](https://imgdb.in/jdPp.jpg)
-
-
-
