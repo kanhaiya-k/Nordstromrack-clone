@@ -341,12 +341,15 @@
 
 <script>
   function signup(e) {
+
     e.preventDefault();
+
     let myform = document.getElementById("myform");
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
+    
     if (localStorage.getItem("users") === null) {
       localStorage.setItem("users", JSON.stringify([]));
     }
@@ -354,9 +357,24 @@
       name,
       email,
       password,
+
+
     };
-    let arr = JSON.parse(localStorage.getItem("users"));
-    arr.push(user);
-    localStorage.setItem("users", JSON.stringify(arr));
-  }
+    
+    if(name === "" || email === "" || password === ""){
+      alert("Please fill all the fields");
+    }
+    else{
+      let users = JSON.parse(localStorage.getItem("users"));
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("User Created Successfully");
+      myform.reset(); 
+    }
+    
+}
+
+
 </script>
+
+ 
